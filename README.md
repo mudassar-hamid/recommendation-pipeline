@@ -64,7 +64,7 @@ The pipeline does not predict explicit star ratings.
 ```text
 recommendation-pipeline/
 ├── configs/config.yaml
-├── dags/recommendation_flow.py # Orchestration DAG/workflow file 
+├── dags/recommendation_flow.py   # Orchestration DAG/workflow file 
 ├── data/
 │   ├── raw/                 # downloaded source + normalized CSVs 
 │   ├── processed/           # valid, split and derived datasets 
