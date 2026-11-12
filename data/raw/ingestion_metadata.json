@@ -1,0 +1,9 @@
+{
+  "dataset": "MovieLens 1M",
+  "source_url": "https://files.grouplens.org/datasets/movielens/ml-1m.zip",
+  "source_format": "MovieLens DAT files using :: delimiter; normalized to CSV",
+  "users_rows": 6040,
+  "items_rows": 3883,
+  "interactions_rows": 1000209,
+  "note": "MovieLens age_group_code values are bucket codes, not exact ages."
+}
