@@ -1,0 +1,21 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+.env
+
+# MovieLens data is downloaded locally; check its terms before redistribution.
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/features/*
+!data/features/.gitkeep
+data/errors/*
+!data/errors/.gitkeep
+models/*
+!models/.gitkeep
+mlruns/
+.prefect/
+*.log

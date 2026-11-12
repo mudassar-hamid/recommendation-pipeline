@@ -1,0 +1,52 @@
+{
+  "k": 5,
+  "positive_rating_threshold": 4.0,
+  "test_interactions": 200039,
+  "positive_test_interactions": 112258,
+  "evaluable_positive_test_interactions": 56245,
+  "cold_start_positive_test_interactions_excluded": 55,
+  "positive_test_interactions_for_users_without_training_history": 55969,
+  "positive_test_interactions_excluded_total": 56013,
+  "users_evaluated": 1122,
+  "catalog_items": 3662,
+  "metrics": [
+    {
+      "model": "Popularity baseline",
+      "precision_at_5": 0.23155080213903745,
+      "recall_at_5": 0.031395442476462365,
+      "ndcg_at_5": 0.2416959309284744,
+      "coverage": 0.024576734025122882,
+      "diversity": 0.7466215728715729,
+      "users_evaluated": 1122,
+      "unique_items_recommended": 90,
+      "catalog_size": 3662,
+      "rmse": null,
+      "mae": null,
+      "rating_predictions_evaluated": 0
+    },
+    {
+      "model": "Item-item collaborative filtering",
+      "precision_at_5": 0.2483065953654189,
+      "recall_at_5": 0.038446451481626814,
+      "ndcg_at_5": 0.26240812325541346,
+      "coverage": 0.12370289459311852,
+      "diversity": 0.7249502023031436,
+      "users_evaluated": 1122,
+      "unique_items_recommended": 453,
+      "catalog_size": 3662,
+      "rmse": 1.0713590493494551,
+      "mae": 0.8206502077422531,
+      "rating_predictions_evaluated": 104448
+    }
+  ],
+  "rating_prediction_metrics": {
+    "rmse": 1.0713590493494551,
+    "mae": 0.8206502077422531,
+    "rating_predictions_evaluated": 104448,
+    "rating_test_interactions_excluded": 95591
+  },
+  "rating_prediction_method": "Similarity-weighted average of the user's training ratings for items similar to the held-out item; user-mean/global-mean fallback; predictions clipped to [1, 5].",
+  "rating_prediction_evaluation_note": "RMSE and MAE are computed only on held-out test ratings for users and items represented in the training data. Test ratings are never used as neighbors.",
+  "diversity_definition": "Mean per-user intra-list Jaccard distance over movie genre sets; empty genre sets have zero similarity.",
+  "evaluation_note": "Macro-averaged over users with at least one positive held-out rating for an item present in the training catalog. Recommendations exclude items already seen in that user's training history."
+}

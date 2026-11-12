@@ -1,0 +1,43 @@
+project:
+  name: movielens-recommendation-pipeline
+  random_seed: 42
+
+data:
+  dataset_name: MovieLens 1M
+  dataset_url: https://files.grouplens.org/datasets/movielens/ml-1m.zip
+  train_fraction: 0.80
+  positive_rating_threshold: 4.0
+
+paths:
+  raw_dir: data/raw
+  source_dir: data/raw/ml-1m
+  normalized_dir: data/raw/normalized
+  processed_dir: data/processed
+  features_dir: data/features
+  errors_dir: data/errors
+  models_dir: models
+  reports_dir: reports
+  tracking_dir: mlruns
+
+evaluation:
+  k: 5
+  item_similarity_neighbors: 100
+  rating_prediction_enabled: true
+
+validation:
+  test_injection:
+    enabled: true
+    number_of_records: 5
+    rules:
+      - invalid_rating
+      - missing_user_id
+      - missing_item_id
+      - invalid_timestamp
+
+mlflow:
+  enabled: true
+  tracking_uri: "sqlite:///mlflow.db"
+  experiment_name: MovieLens-Recommendation-Pipeline
+
+report:
+  generate_pdf: true

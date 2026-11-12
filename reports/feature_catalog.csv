@@ -1,0 +1,17 @@
+feature_name,entity,description,data_type,computation_or_source
+user_activity_count,user,Number of training interactions for the user,integer,Count of rows in train_interactions
+user_avg_rating,user,Mean rating supplied by the user in training data,float,Mean rating grouped by user
+preferred_category,user,Most frequently interacted movie genre in training data,string,Most common genre among movies interacted with by the user
+days_since_last_interaction,user,Days from the training cutoff to the user's latest training interaction,float,Training cutoff minus user last interaction
+gender,user,MovieLens user gender field,category,Source demographic field
+age_group_code,user,MovieLens age bucket code; not an exact age,integer,Source demographic field
+occupation_code,user,MovieLens occupation category code,integer,Source demographic field
+item_interaction_count,item,Number of training ratings for the item,integer,Count of training interactions grouped by item
+item_positive_interaction_count,item,Number of training ratings at or above the positive threshold,integer,Count of ratings >= configured threshold
+item_avg_rating,item,Mean training rating for the item,float,Mean rating grouped by item
+genres,item,Pipe-separated movie genres,string,MovieLens item metadata
+interaction_rating,interaction,Observed training rating,float,Source interaction value
+interaction_is_positive,interaction,Whether rating meets the positive feedback threshold,boolean,rating >= configured threshold
+interaction_weekday,interaction,UTC weekday of interaction,integer,Timestamp weekday (Monday=0)
+interaction_hour_utc,interaction,UTC hour of interaction,integer,Timestamp hour in UTC
+days_before_training_cutoff,interaction,Days between event timestamp and training cutoff,float,Training cutoff minus event timestamp

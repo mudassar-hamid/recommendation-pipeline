@@ -1,0 +1,47 @@
+{
+  "status": "completed_with_invalid_records",
+  "datasets": {
+    "users": {
+      "total": 6040,
+      "valid": 6040,
+      "invalid": 0,
+      "issues": {}
+    },
+    "items": {
+      "total": 3883,
+      "valid": 3883,
+      "invalid": 0,
+      "issues": {}
+    },
+    "interactions": {
+      "total": 1000214,
+      "valid": 1000207,
+      "invalid": 7,
+      "issues": {
+        "duplicate_interaction_event": 4,
+        "rating_outside_1_to_5": 2,
+        "missing_or_non_numeric_user_id": 1,
+        "missing_or_non_numeric_item_id": 1,
+        "invalid_timestamp": 1
+      }
+    }
+  },
+  "overall": {
+    "records_checked": 1010137,
+    "valid_records": 1010130,
+    "invalid_records": 7
+  },
+  "validation_test_injection": {
+    "enabled": true,
+    "injected_records": 5,
+    "rules": [
+      "invalid_rating",
+      "missing_user_id",
+      "missing_item_id",
+      "invalid_timestamp",
+      "invalid_rating"
+    ],
+    "note": "Synthetic rows were appended in memory only; normalized source files were not modified."
+  },
+  "validation_policy": "Invalid rows are quarantined in data/errors; valid rows continue to preparation."
+}

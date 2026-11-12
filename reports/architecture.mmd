@@ -1,0 +1,26 @@
+flowchart TD
+    A[MovieLens 1M source files] --> B[Ingestion and CSV normalization]
+    B --> C[Automated data validation]
+    C -->|Valid records| D[Cleaning and chronological train/test split]
+    C -->|Invalid records| E[Error quarantine and validation report]
+    D --> F[Derived summaries and sparse interaction matrix]
+    F --> G[Reusable user, item and interaction features]
+    G --> H[Initialize MLflow experiment]
+    H --> I[Popularity baseline]
+    H --> J[Personalized item-item collaborative filtering]
+    I --> K[Top-K evaluation]
+    J --> K
+    K --> L[Model comparison and 2-page report]
+    H -. tracking context .-> M[(MLflow tracking store)]
+    I -. parameters and artifacts .-> M
+    J -. parameters and artifacts .-> M
+    K -. metrics and recommendation artifacts .-> M
+    N[Prefect flow] -. orchestrates tasks, retries and states .-> B
+    N -. dependencies .-> C
+    N -. dependencies .-> D
+    N -. dependencies .-> F
+    N -. dependencies .-> G
+    N -. dependencies .-> H
+    N -. parallel branches .-> I
+    N -. parallel branches .-> J
+    N -. joins both model runs .-> K

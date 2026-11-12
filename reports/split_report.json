@@ -1,0 +1,11 @@
+{
+  "method": "global chronological split",
+  "train_fraction_requested": 0.8,
+  "train_rows": 800168,
+  "test_rows": 200039,
+  "actual_train_fraction": 0.8000023995033028,
+  "cutoff_timestamp_utc": "2000-12-02T14:52:18+00:00",
+  "train_max_timestamp_utc": "2000-12-02T14:52:18+00:00",
+  "test_min_timestamp_utc": "2000-12-02T14:52:28+00:00",
+  "note": "Rows at the cutoff timestamp are assigned to train; the actual ratio can differ slightly when timestamps tie."
+}
