@@ -1,0 +1,10 @@
+{
+  "matrix_type": "sparse explicit ratings matrix (CSR)",
+  "shape": [
+    6040,
+    3883
+  ],
+  "nonzero_interactions": 800168,
+  "zero_semantics": "No recorded interaction; not a zero rating.",
+  "aggregation": "Mean rating when a user has multiple training events for the same item."
+}
